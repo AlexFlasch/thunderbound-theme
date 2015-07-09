@@ -1,0 +1,257 @@
+@keyframes jiggle {
+  0% {
+    transform: rotate(0deg); }
+  25% {
+    transform: rotate(10deg); }
+  50% {
+    transform: rotate(0deg); }
+  75% {
+    transform: rotate(-10deg); }
+  100% {
+    transform: rotate(0deg); } }
+
+@-webkit-keyframes jiggle {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  25% {
+    -webkit-transform: rotate(5deg); }
+  50% {
+    -webkit-transform: rotate(0deg); }
+  75% {
+    -webkit-transform: rotate(-5deg); }
+  100% {
+    -webkit-transform: rotate(0deg); } }
+
+.jiggle:hover {
+  animation: jiggle 0.1s linear 0 infinite forwards; }
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1); }
+  50% {
+    -webkit-transform: scale(1.25); }
+  100% {
+    -webkit-transform: scale(1); } }
+
+.pulse:hover {
+  animation: pulse 3s ease 0 infinite forwards; }
+
+* {
+  font-family: 'PT Sans', sans-serif;
+  outline: none; }
+
+body {
+  background-color: #f2f1ef; }
+
+input[type="search"]::webkit-input-placeholder {
+  color: #587ca0; }
+
+input[type="search"]:-moz-placeholder {
+  color: #587ca0; }
+
+input[type="search"]::-moz-placeholder {
+  color: #587ca0; }
+
+input[type="search"]:-ms-input-placeholder {
+  color: #587ca0; }
+
+.thunder {
+  color: #22a7f0; }
+
+.z-height-1 {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+
+.z-height-2 {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+
+.z-height-3 {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+
+.z-height-4 {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+
+.z-height-5 {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
+
+.navbar {
+  width: 100vw;
+  border: none;
+  border-radius: 0px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+  .navbar.navbar-default {
+    background-color: #2c3e50; }
+    .navbar.navbar-default .navbar-header {
+      background-color: #22313f; }
+      .navbar.navbar-default .navbar-header .navbar-brand {
+        color: #ddd; }
+        .navbar.navbar-default .navbar-header .navbar-brand .jiggle {
+          transform: rotate(0deg);
+          transition: transform 1s;
+          -webkit-transform: rotate(0deg);
+          -webkit-transition: transform 0.15s; }
+      .navbar.navbar-default .navbar-header .navbar-brand:hover .jiggle {
+        animation-name: jiggle;
+        -webkit-animation-name: jiggle;
+        animation-duration: 0.15s;
+        -webkit-animation-duration: 0.15s;
+        animation-iteration-count: infinite;
+        -webkit-animation-iterationcount: infinite; }
+    .navbar.navbar-default .navbar-nav li > a {
+      color: #587ca0; }
+    .navbar.navbar-default .navbar-nav li.active > a {
+      background-color: #587ca0;
+      color: #22313f; }
+    .navbar.navbar-default .input-group {
+      display: inline-flex; }
+      .navbar.navbar-default .input-group button.input-group-addon {
+        background-color: #587ca0;
+        color: #2c3e50;
+        border: none;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 1px;
+        border-bottom-right-radius: 1px; }
+      .navbar.navbar-default .input-group .form-control {
+        background-color: #2c3e50;
+        color: #587ca0;
+        border-color: #587ca0;
+        border-top-left-radius: 1px;
+        border-bottom-left-radius: 1px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px; }
+  .navbar.navbar-inverse {
+    background-color: #7795b4; }
+    .navbar.navbar-inverse .navbar-header {
+      background-color: #587ca0; }
+      .navbar.navbar-inverse .navbar-header .navbar-brand {
+        color: #363636; }
+        .navbar.navbar-inverse .navbar-header .navbar-brand .jiggle {
+          transform: rotate(0deg);
+          transition: transform 1s;
+          -webkit-transform: rotate(0deg);
+          -webkit-transition: transform 0.15s; }
+      .navbar.navbar-inverse .navbar-header .navbar-brand:hover .jiggle {
+        animation-name: jiggle;
+        -webkit-animation-name: jiggle;
+        animation-duration: 0.15s;
+        -webkit-animation-duration: 0.15s;
+        animation-iteration-count: infinite;
+        -webkit-animation-iterationcount: infinite; }
+    .navbar.navbar-inverse .navbar-nav li > a {
+      color: #22313f; }
+    .navbar.navbar-inverse .navbar-nav li.active > a {
+      background-color: #22313f;
+      color: #7795b4; }
+    .navbar.navbar-inverse .input-group {
+      display: inline-flex; }
+      .navbar.navbar-inverse .input-group button.input-group-addon {
+        background-color: #22313f;
+        color: #7795b4;
+        border-color: #22313f;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 1px;
+        border-bottom-right-radius: 1px; }
+      .navbar.navbar-inverse .input-group .form-control {
+        background-color: #7795b4;
+        color: #2c3e50;
+        border-color: #22313f;
+        border-top-left-radius: 1px;
+        border-bottom-left-radius: 1px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px; }
+
+.input-group-addon.oi {
+  display: table-cell;
+  top: auto; }
+
+.btn {
+  border-width: 3px;
+  border-radius: 2px;
+  font-size: .85em;
+  font-weight: 500;
+  margin-top: 0px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.1s cubic-bezier(0.88, 0.09, 0.47, 0.46); }
+  .btn.btn-default {
+    background-color: #22313f;
+    border-color: #587ca0;
+    color: #587ca0; }
+    .btn.btn-default:hover {
+      margin-top: -2px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+    .btn.btn-default:active {
+      opacity: 0.8;
+      background-color: #22313f;
+      border-color: #587ca0;
+      color: #587ca0; }
+  .btn.btn-primary {
+    background-color: #4a89dc;
+    border-color: #5d9cec; }
+    .btn.btn-primary:hover {
+      margin-top: -2px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+    .btn.btn-primary:active {
+      opacity: 0.8;
+      background-color: #4a89dc;
+      border-color: #5d9cec; }
+  .btn.btn-active {
+    background-color: #f6bb42;
+    border-color: #ffce54; }
+    .btn.btn-active:hover {
+      margin-top: -2px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+    .btn.btn-active:active {
+      opacity: 0.8;
+      background-color: #f6bb42;
+      border-color: #ffce54; }
+  .btn.btn-success {
+    background-color: #8cc152;
+    border-color: #a0d468; }
+    .btn.btn-success:hover {
+      margin-top: -2px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+    .btn.btn-success:active {
+      opacity: 0.8;
+      background-color: #8cc152;
+      border-color: #a0d468; }
+  .btn.btn-info {
+    background-color: #37bc9b;
+    border-color: #48cfad; }
+    .btn.btn-info:hover {
+      margin-top: -2px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+    .btn.btn-info:active {
+      opacity: 0.8;
+      background-color: #37bc9b;
+      border-color: #48cfad; }
+  .btn.btn-warning {
+    background-color: #e9573f;
+    border-color: #fc6e51; }
+    .btn.btn-warning:hover {
+      margin-top: -2px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+    .btn.btn-warning:active {
+      opacity: 0.8;
+      background-color: #e9573f;
+      border-color: #fc6e51; }
+  .btn.btn-danger {
+    background-color: #da4453;
+    border-color: #ed5565; }
+    .btn.btn-danger:hover {
+      margin-top: -2px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+    .btn.btn-danger:active {
+      opacity: 0.8;
+      background-color: #da4453;
+      border-color: #ed5565; }
+
+.btn-group button {
+  border-left-width: .5px;
+  border-right-width: .5px; }
+
+.btn-group button:nth-child(1) {
+  border-left-width: 3px; }
+
+.btn-group button:nth-child(n) {
+  border-right-width: 3px; }

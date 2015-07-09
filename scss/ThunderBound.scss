@@ -1,0 +1,462 @@
+// out: ../css/ThunderBound.css
+
+// This file is the ThunderBound bootstrap theme
+// Author: Alex Flasch
+// Created: 7/6/2015
+
+// palettes
+
+// colors
+
+$pictonBlue: #22a7f0;
+$ebonyClay: #22313f;
+$madison: #2c3e50;
+$bluewood: lighten(#34495e, 20);
+$lightbluewood: lighten($bluewood, 10);
+
+$blueJeansLt: #5d9cec;
+$blueJeansDk: #4a89dc;
+$aquaLt: #4fc1e9;
+$aquaDk: #3bafda;
+$mintLt: #48cfad;
+$mintDk: #37bc9b;
+$grassLt: #a0d468;
+$grassDk: #8cc152;
+$sunflowerLt: #ffce54;
+$sunflowerDk: #f6bb42;
+$bittersweetLt: #fc6e51;
+$bittersweetDk: #e9573f;
+$grapefruitLt: #ed5565;
+$grapefruitDk: #da4453;
+$lavenderLt: #ac92ec;
+$lavenderDk: #967adc;
+$roseLt: #ec87c0;
+$roseDk: #d770ad;
+
+// button colors
+
+$defaultBg: $ebonyClay;
+$default: $bluewood;
+$primaryBg: $blueJeansDk;
+$primary: $blueJeansLt;
+$infoBg: $mintDk;
+$info: $mintLt;
+$activeBg: $sunflowerDk;
+$active: $sunflowerLt;
+$successBg: $grassDk;
+$success: $grassLt;
+$warningBg: $bittersweetDk;
+$warning: $bittersweetLt;
+$dangerBg: $grapefruitDk;
+$danger: $grapefruitLt;
+
+// background colors
+
+$cararra: #f2f1ef;
+
+// animations
+// animation: name duration timing-function delay iteration-count direction
+
+@mixin pulseShadow($color) {
+    @keyframes pulse {
+        0% {
+            text-shadow: none;
+        }
+        50% {
+            text-shadow: 0 0 5px $color,
+            0 0 10px $color,
+            0 0 20px $color,
+            0 0 15px $color;
+        }
+        100%{
+            text-shadow: none;
+        }
+    }
+}
+
+@keyframes jiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@-webkit-keyframes jiggle {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    25% {
+        -webkit-transform: rotate(5deg);
+    }
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    75% {
+        -webkit-transform: rotate(-5deg);
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+    }
+}
+
+.jiggle:hover {
+    animation: jiggle .1s linear 0 infinite forwards
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.25);
+    }
+    100% {
+        -webkit-transform: scale(1);
+    }
+}
+
+.pulse:hover {
+    animation: pulse 3s ease 0 infinite forwards
+}
+
+// material design helper mixin
+
+@mixin z-height($level: 0) {
+    @if $level == 0 {
+        box-shadow: none;
+    }
+    @else if $level == 1 {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+    @else if $level == 2 {
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+    @else if $level == 3 {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    }
+    @else if $level == 4 {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+    @else if $level == 5 {
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    }
+
+}
+
+// set font and other things
+
+* {
+    font-family: 'PT Sans', sans-serif;
+    outline: none;
+}
+
+// set background color
+
+body {
+    background-color: $cararra;
+}
+
+// change color of search placeholder text
+
+input[type="search"]::webkit-input-placeholder {
+    color: $bluewood;
+}
+input[type="search"]:-moz-placeholder {
+    color: $bluewood;
+}
+input[type="search"]::-moz-placeholder {
+    color: $bluewood;
+}
+input[type="search"]:-ms-input-placeholder{
+    color: $bluewood;
+}
+
+// miscellanious styles
+
+.thunder {
+    color: $pictonBlue;
+}
+
+.z-height-1 {
+    @include z-height(1);
+}
+
+.z-height-2 {
+    @include z-height(2);
+}
+
+.z-height-3 {
+    @include z-height(3);
+}
+
+.z-height-4 {
+    @include z-height(4);
+}
+
+.z-height-5 {
+    @include z-height(5);
+}
+
+// Bootstrap theming here
+
+// navbar theming
+.navbar{
+    width: 100vw;
+    border: none;
+    border-radius: 0px;
+    @include z-height(2);
+    &.navbar-default { // navbar-default theme
+        background-color: $madison;
+        .navbar-header {
+            background-color: $ebonyClay;
+            .navbar-brand {
+                color: #ddd;
+                .jiggle {
+                    transform: rotate(0deg);
+                    transition: transform 1s;
+
+                    -webkit-transform: rotate(0deg);
+                    -webkit-transition: transform 0.15s;
+                }
+            }
+            .navbar-brand:hover {
+                .jiggle {
+                    animation-name: jiggle;
+                    -webkit-animation-name: jiggle;
+
+                    animation-duration: 0.15s;
+                    -webkit-animation-duration: 0.15s;
+
+                    animation-iteration-count: infinite;
+                    -webkit-animation-iterationcount: infinite;
+                }
+            }
+        }
+        .navbar-nav {
+            li > a {
+                color: $bluewood;
+            }
+            li.active > a {
+                background-color: $bluewood;
+                color: $ebonyClay;
+            }
+        }
+        .input-group {
+            display: inline-flex;
+            button.input-group-addon {
+                background-color: $bluewood;
+                color: $madison;
+                border: none;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+                border-top-right-radius: 1px;
+                border-bottom-right-radius: 1px;
+            }
+            .form-control {
+                background-color: $madison;
+                color: $bluewood;
+                border-color: $bluewood;
+                border-top-left-radius: 1px;
+                border-bottom-left-radius: 1px;
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+            }
+        }
+    }
+    &.navbar-inverse { // navbar-inverse theme
+        background-color: $lightbluewood;
+        .navbar-header {
+            background-color: $bluewood;
+            .navbar-brand {
+                color: #363636;
+                .jiggle {
+                    transform: rotate(0deg);
+                    transition: transform 1s;
+
+                    -webkit-transform: rotate(0deg);
+                    -webkit-transition: transform 0.15s;
+                }
+            }
+            .navbar-brand:hover {
+                .jiggle {
+                    animation-name: jiggle;
+                    -webkit-animation-name: jiggle;
+
+                    animation-duration: 0.15s;
+                    -webkit-animation-duration: 0.15s;
+
+                    animation-iteration-count: infinite;
+                    -webkit-animation-iterationcount: infinite;
+                }
+            }
+        }
+        .navbar-nav {
+            li > a {
+                color: $ebonyClay;
+            }
+            li.active > a {
+                background-color: $ebonyClay;
+                color: $lightbluewood;
+            }
+        }
+        .input-group {
+            display: inline-flex;
+            button.input-group-addon {
+                background-color: $ebonyClay;
+                color: $lightbluewood;
+                border-color: $ebonyClay;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+                border-top-right-radius: 1px;
+                border-bottom-right-radius: 1px;
+            }
+            .form-control {
+                background-color: $lightbluewood;
+                color: $madison;
+                border-color: $ebonyClay;
+                border-top-left-radius: 1px;
+                border-bottom-left-radius: 1px;
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+            }
+        }
+    }
+}
+// button theming
+
+.input-group-addon.oi {
+    display: table-cell;
+    top: auto;
+}
+
+.btn {
+    border-width: 3px;
+    border-radius: 2px;
+    font-size: .85em;
+    font-weight: 500; // slightly bolder than normal
+
+    margin-top: 0px;
+    @include z-height(1);
+    transition: all .1s cubic-bezier(.88,.09,.47,.46);
+
+    &.btn-default {
+        background-color: $defaultBg;
+        border-color: $default;
+        color: $bluewood;
+        &:hover {
+            margin-top: -2px;
+            @include z-height(2);
+        }
+        &:active {
+            opacity: 0.8;
+            background-color: $defaultBg;
+            border-color: $default;
+            color: $bluewood;
+        }
+    }
+    &.btn-primary {
+        background-color: $primaryBg;
+        border-color: $primary;
+        &:hover {
+            margin-top: -2px;
+            @include z-height(2);
+        }
+        &:active {
+            opacity: 0.8;
+            background-color: $primaryBg;
+            border-color: $primary;
+        }
+    }
+    &.btn-active {
+        background-color: $activeBg;
+        border-color: $active;
+        &:hover {
+            margin-top: -2px;
+            @include z-height(2);
+        }
+        &:active {
+            opacity: 0.8;
+            background-color: $activeBg;
+            border-color: $active;
+        }
+    }
+    &.btn-success {
+        background-color: $successBg;
+        border-color: $success;
+        &:hover {
+            margin-top: -2px;
+            @include z-height(2);
+        }
+        &:active {
+            opacity: 0.8;
+            background-color: $successBg;
+            border-color: $success;
+        }
+    }
+    &.btn-info {
+        background-color: $infoBg;
+        border-color: $info;
+        &:hover {
+            margin-top: -2px;
+            @include z-height(2);
+        }
+        &:active {
+            opacity: 0.8;
+            background-color: $infoBg;
+            border-color: $info;
+        }
+    }
+    &.btn-warning {
+        background-color: $warningBg;
+        border-color: $warning;
+        &:hover {
+            margin-top: -2px;
+            @include z-height(2);
+        }
+        &:active {
+            opacity: 0.8;
+            background-color: $warningBg;
+            border-color: $warning;
+        }
+    }
+    &.btn-danger {
+        background-color: $dangerBg;
+        border-color: $danger;
+        &:hover {
+            margin-top: -2px;
+            @include z-height(2);
+        }
+        &:active {
+            opacity: 0.8;
+            background-color: $dangerBg;
+            border-color: $danger;
+        }
+    }
+    &.dropdown-toggle {
+
+    }
+}
+
+.btn-group {
+    button {
+        border-left-width: .5px;
+        border-right-width: .5px;
+    }
+    button:nth-child(1) {
+        border-left-width: 3px;
+    }
+    button:nth-child(n) {
+        border-right-width: 3px;
+    }
+}

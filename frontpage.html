@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ThunderBound</title>
+
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="fonts/open-iconic-bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/ThunderBound.css">
+    <link rel="stylesheet" href="css/frontpage.css">
+
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/ui-bootstrap-tpls-0.13.0.min.js"></script>
+    <script src="lib/FileAPI.min.js"></script>
+    <script src="lib/ng-file-upload-all.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SVG-Morpheus/0.1.8/svg-morpheus.js"></script>
+    <script src="js/ThunderBound.js"></script>
+    <script src="js/FrontpageController.js"></script>
+</head>
+<body ng-app="ThunderBound">
+    <!-- Separate this into layout once we get to ASP.NET -->
+    <nav class="navbar navbar-default">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-init="navCollapsed = true;" ng-click="navCollapsed = !navCollapsed">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">Thunder <span class="oi oi-bolt thunder jiggle"></span> Bound</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed = true;">
+
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="">Frontpage</a></li>
+                <li><a href="">test_cloud</a></li>
+                <li ng-repeat="cloud in user.clouds"><a href="">{{cloud.name}}</a></li>
+            </ul>
+
+            <form role="search" class="navbar-form navbar-right">
+                <div class="input-group">
+                    <input type="search" class="form-control" placeholder="Search" />
+                    <button class="input-group-addon oi oi-magnifying-glass"></button>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <div class="spacer"></div>
+
+    <nav class="navbar navbar-inverse">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-init="navCollapsed = true;" ng-click="navCollapsed = !navCollapsed">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">Thunder <span class="oi oi-bolt thunder jiggle"></span> Bound</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" ng-click="navCollapsed = true;">
+
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="">Frontpage</a></li>
+                <li><a href="">test_cloud</a></li>
+                <li ng-repeat="cloud in user.clouds"><a href="">{{cloud.name}}</a></li>
+            </ul>
+
+            <form role="search" class="navbar-form navbar-right">
+                <div class="input-group">
+                    <input type="search" class="form-control" placeholder="Search" />
+                    <button class="input-group-addon oi oi-magnifying-glass"></button>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <div class="spacer"></div>
+
+    <!-- buttons -->
+    <div class="container">
+        <div class="h3 center thunder z-height-3 pulse">Buttons</div>
+        <button class="btn btn-default">Default</button>
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-active">Active</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-info">Info</button>
+        <button class="btn btn-warning">Warning</button>
+        <button class="btn btn-danger">Danger</button>
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <span class="oi oi-caret-bottom"></span>
+                Dropdown
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#">Option 1</a></li>
+                <li><a href="#">Option 2</a></li>
+                <li><a href="#">Option 3</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="container">
+        <div class="h3 center thunder z-height-3 pulse">Button Groups</div>
+        <div class="btn-group" role="group">
+            <button class="btn btn-default">Left</button>
+            <button class="btn btn-default">Middle</button>
+            <button class="btn btn-default">Right</button>
+        </div>
+    </div>
+</body>
+</html>
